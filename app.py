@@ -45,7 +45,14 @@ model = joblib.load('model/hiring_model.pkl')
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    # Total candidates
+
+    cursor.execute(
+        "SELECT COUNT(*) FROM candidates"
+    )
+
+    total_candidates = cursor.fetchone()[0]
+    return render_template('index.html', total_candidates=total_candidates)
 
 # ==========================================
 # PREDICT PAGE
