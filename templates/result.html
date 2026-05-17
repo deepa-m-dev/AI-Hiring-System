@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Prediction Result</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- RESULT CONTAINER -->
+<!-- ========================= -->
+
+<div class="result-container">
+
+    <div class="result-card">
+
+        <!-- TITLE -->
+
+        <h1 class="result-title">
+            AI Recruitment Analysis
+        </h1>
+
+        <!-- PREDICTION -->
+
+        {% if prediction == "Hired" %}
+
+            <div class="prediction-icon success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h2 class="prediction-success">
+                Candidate Likely to be Hired
+            </h2>
+
+        {% else %}
+
+            <div class="prediction-icon fail-icon">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+
+            <h2 class="prediction-fail">
+                Candidate Likely to be Rejected
+            </h2>
+
+        {% endif %}
+
+        <!-- CONFIDENCE -->
+
+        <div class="confidence-box">
+
+            <h3>
+                Confidence Score
+            </h3>
+
+            <div class="confidence-value">
+                {{ confidence }}%
+            </div>
+
+        </div>
+
+        <!-- CANDIDATE RATING -->
+
+        <div class="rating-box">
+
+            <h3>
+                Candidate Rating
+            </h3>
+
+            <div class="rating-value">
+                {{ candidate_rating }}
+            </div>
+
+        </div>
+
+        <!-- AI INSIGHTS -->
+
+        <div class="insights-box">
+
+            <h3>
+                AI Insights
+            </h3>
+
+            <ul>
+
+                {% for insight in insights %}
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    {{ insight }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="result-buttons">
+
+            <a href="/predict-page"
+               class="back-btn">
+
+                Try Another Prediction
+
+            </a>
+
+            <a href="/dashboard"
+               class="secondary-btn">
+
+                Open Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

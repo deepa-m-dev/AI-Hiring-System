@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Hiring Prediction System</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container py-5">
+
+    <div class="glass-card">
+
+        <h1 class="title">
+            AI Hiring Prediction System
+        </h1>
+
+        <p class="subtitle">
+            Intelligent Candidate Screening Platform
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <div class="row">
+
+                <!-- AGE -->
+                <div class="col-md-4 mb-3">
+                    <label>Age</label>
+                    <input type="number" step="any" name="age" class="form-control" required>
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="col-md-4 mb-3">
+                    <label>Education Level</label>
+
+                    <select name="education_level" class="form-control" required>
+                        <option value="0">Bachelor</option>
+                        <option value="1">Master</option>
+                        <option value="2">PhD</option>
+                    </select>
+                </div>
+
+                <!-- UNIVERSITY TIER -->
+                <div class="col-md-4 mb-3">
+                    <label>University Tier</label>
+
+                    <select name="university_tier" class="form-control" required>
+                        <option value="0">Tier 1</option>
+                        <option value="1">Tier 2</option>
+                        <option value="2">Tier 3</option>
+                    </select>
+                </div>
+
+                <!-- CGPA -->
+                <div class="col-md-4 mb-3">
+                    <label>CGPA</label>
+                    <input type="number" step="0.01" name="cgpa" class="form-control" required>
+                </div>
+
+                <!-- INTERNSHIPS -->
+                <div class="col-md-4 mb-3">
+                    <label>Internships</label>
+                    <input type="number" step="any" name="internships" class="form-control" required>
+                </div>
+
+                <!-- PROJECTS -->
+                <div class="col-md-4 mb-3">
+                    <label>Projects</label>
+                    <input type="number" step="any" name="projects" class="form-control" required>
+                </div>
+
+                <!-- PROGRAMMING LANGUAGES -->
+                <div class="col-md-4 mb-3">
+                    <label>Programming Languages</label>
+                    <input type="number" step="any" name="programming_languages" class="form-control" required>
+                </div>
+
+                <!-- CERTIFICATIONS -->
+                <div class="col-md-4 mb-3">
+                    <label>Certifications</label>
+                    <input type="number" step="any" name="certifications" class="form-control" required>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="col-md-4 mb-3">
+                    <label>Experience Years</label>
+                    <input type="number" step="0.1" name="experience_years" class="form-control" required>
+                </div>
+
+                <!-- HACKATHONS -->
+                <div class="col-md-4 mb-3">
+                    <label>Hackathons</label>
+                    <input type="number" step="any" name="hackathons" class="form-control" required>
+                </div>
+
+                <!-- RESEARCH PAPERS -->
+                <div class="col-md-4 mb-3">
+                    <label>Research Papers</label>
+                    <input type="number" step="any" name="research_papers" class="form-control" required>
+                </div>
+
+                <!-- SKILLS SCORE -->
+                <div class="col-md-4 mb-3">
+                    <label>Skills Score</label>
+                    <input type="number" step="0.1" name="skills_score" class="form-control" required>
+                </div>
+
+                <!-- SOFT SKILLS -->
+                <div class="col-md-4 mb-3">
+                    <label>Soft Skills Score</label>
+                    <input type="number" step="0.1" name="soft_skills_score" class="form-control" required>
+                </div>
+
+                <!-- RESUME LENGTH -->
+                <div class="col-md-4 mb-3">
+                    <label>Resume Length (Words)</label>
+                    <input type="number" step="any" name="resume_length_words" class="form-control" required>
+                </div>
+
+                <!-- COMPANY TYPE -->
+                <div class="col-md-4 mb-3">
+                    <label>Company Type</label>
+
+                    <select name="company_type" class="form-control" required>
+                        <option value="0">Startup</option>
+                        <option value="1">MNC</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <button type="submit" class="predict-btn">
+                    Predict Hiring
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
