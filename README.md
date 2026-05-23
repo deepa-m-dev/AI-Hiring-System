@@ -271,6 +271,11 @@ This project helped in learning:
 
 ---
 
+## 🚀 Live Demo
+[Click here to view project](https://ai-hiring-system-aowd.onrender.com)
+
+---
+
 # 👩‍💻 Author
 
 ## Deepa M
